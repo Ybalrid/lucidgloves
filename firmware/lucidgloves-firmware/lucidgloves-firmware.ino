@@ -13,11 +13,11 @@
   #define SERIAL_BAUD_RATE 115200
   
 //serial over Bluetooth (Work in progress)
-  #define BTSERIAL_DEVICE_NAME "lucidgloves-left"
+ #define BTSERIAL_DEVICE_NAME "lucidgloves-left"
 
 //ANALOG INPUT CONFIG
 #define ANALOG_MAX 4095   //4095 on ESP32, 1023 on Arduino. Make sure is the same as driver setting.
-#define FLIP_POTS  false  //Flip values from potentiometers (for fingers!) if they are backwards
+#define FLIP_POTS  true  //Flip values from potentiometers (for fingers!) if they are backwards
 
 //Gesture enables, make false to use button override
 #define TRIGGER_GESTURE true
@@ -28,14 +28,14 @@
 #define JOYSTICK_BLANK false //make true if not using the joystick
 #define JOY_FLIP_X false
 #define JOY_FLIP_Y false
-#define JOYSTICK_DEADZONE 10 //deadzone in the joystick to prevent drift (in percent)
+#define JOYSTICK_DEADZONE 15//deadzone in the joystick to prevent drift (in percent)
 
 #define NO_THUMB false //If for some reason you don't want to track the thumb
 
-#define USING_CALIB_PIN false //When PIN_CALIB is shorted (or it's button pushed) it will reset calibration if this is on.
+#define USING_CALIB_PIN true //When PIN_CALIB is shorted (or it's button pushed) it will reset calibration if this is on.
 
-#define USING_FORCE_FEEDBACK false //Force feedback haptics allow you to feel the solid objects you hold
-#define SERVO_SCALING false //dynamic scaling of servo motors
+#define USING_FORCE_FEEDBACK true //Force feedback haptics allow you to feel the solid objects you hold
+#define SERVO_SCALING true //dynamic scaling of servo motors
 
 //PINS CONFIGURATION 
 #if defined(__AVR__)
@@ -83,5 +83,5 @@
   #define PIN_MIDDLE_MOTOR    19 //^
   #define PIN_INDEX_MOTOR     21 //^
   #define PIN_THUMB_MOTOR     17 //^
-  #define PIN_MENU_BTN        27
+  #define PIN_MENU_BTN        23
 #endif
